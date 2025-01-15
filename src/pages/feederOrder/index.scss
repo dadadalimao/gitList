@@ -1,0 +1,214 @@
+.f {
+  font-size: 14px;
+transform: translateY(-105px);
+
+  .f-title {
+    width: 350px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+margin-bottom: 12px;
+    .orderCard-item {
+      position: relative;
+      width: 66px;
+      height: 36px;
+      text-align: center;
+      line-height: 36px;
+      border-radius: 24px;
+      color: #757575;
+
+    }
+
+    .orderCard-item.active {
+      color: #fff;
+      background: #FFAE00;
+    }
+  }
+  .noWork{
+    padding: 26px 0;
+    text-align: center;
+    color: #000;
+    font-size: 12px;
+    .noWork-img{
+      width: 92px;
+      height: 44px;
+      margin-bottom: 10px;
+    }
+  }
+
+}
+.w75{
+  width: 75px !important;
+  height: 27px !important;
+}
+.f-body {
+  display: flex;
+  justify-content: center;
+
+  .orders {
+    color: #2E2C30;
+
+    .order {
+      width: 327px;
+      height: 182px;
+      border-radius: 16px;
+      box-shadow: 0 5px 25px 0 #2E2C300F;
+      padding: 0 16px 12px 0;
+      position: relative;
+      z-index: 9999;
+      font-size: 12px;
+      background: #fff;
+
+      .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: -1px;
+
+        >View {
+          &:first-child {
+            display: flex;
+          }
+        }
+
+        .title-logo {
+          color: #fff;
+          text-align: center;
+          width: 82px;
+          height: 32px;
+          line-height: 32px;
+          background: $sec-color;
+          border-bottom-right-radius: 16px;
+          border-top-left-radius: 16px;
+          font-size: 14px;
+        }
+
+        .title-code {
+          height: 18px;
+          margin-left: 10px;
+          padding-top: 7px;
+          display: flex;
+          display: flex;
+          align-items: center;
+          color: #757575;
+
+          .title-copy {
+            margin-left: 10px;
+            width: 13px;
+            height: 13px;
+
+            >Image {
+              width: 13px;
+              height: 13px;
+            }
+          }
+
+        }
+
+        .title-pay {
+          padding-top: 7px;
+          color: red;
+          text-align: right;
+        }
+      }
+
+      .content {
+        padding-left: 16px;
+        font-size: 12px;
+        color: #757575;
+
+        .petImgs {
+          display: flex;
+          align-items: center;
+          border-top: 1px solid #F4F8FB;
+          border-bottom: 1px solid #F4F8FB;
+          padding: 10px 0;
+
+          .img {
+            margin-right: 12px;
+            width: 60px;
+            height: 60px;
+
+            >Image {
+              width: 100%;
+              height: 100%;
+              border-radius: 10px;
+            }
+          }
+
+          .text {
+            width: 239px;
+
+            >View {
+              &:first-child {
+                font-size: 14px;
+                color: #2E2C30;
+                margin-bottom: 8px;
+              }
+            }
+
+            .text-address {
+              margin-bottom: 3px;
+            }
+          }
+        }
+
+        .time {
+          padding: 10px 0 15px 0;
+
+          >Text {
+            color: #2E2C30;
+          }
+        }
+
+        .btn {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          Text {
+            font-size: 16px;
+            color: #2E2C30;
+          }
+
+          >View {
+            &:last-child {
+              display: flex;
+              align-items: center;
+              color: #fff;
+            }
+          }
+
+          .myOrder-btn {
+            width: 78px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 24px;
+            border: 1px solid $sec-color;
+            margin-left: 5px;
+          }
+        }
+
+      }
+
+
+    }
+
+
+
+  }
+}
+
+.ellipsis {
+  white-space: nowrap;
+  /* 禁止换行 */
+  overflow: hidden;
+  /* 隐藏溢出内容 */
+  text-overflow: ellipsis;
+  /* 使用省略号表示溢出内容 */
+}
+
+.w102 {
+  width: 102px !important;
+}

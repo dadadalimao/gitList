@@ -1,0 +1,17 @@
+$main-color: #a869c6;
+$main-color-light: #e2c4f0;
+$main-sec-color: #ebd8f4;
+// sec也是喂养员色调
+$sec-color: #ffc93e;
+// 是sec的0.45颜色
+$sec-sec-color: rgb(249, 227, 166);
+$grey-color: #f4f8fb;
+$friendly-color: #97d351;
+$unfriendly-color: #ffc93e;
+$poisoning-color: #d35153;
+
+// 设置nutui的主题色
+:root,
+page {
+  --nutui-color-primary: $main-color;
+}

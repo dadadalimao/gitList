@@ -1,0 +1,55 @@
+.loading-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading-container-mask {
+  margin-top: -25%;
+  padding: 20px;
+  width: fit-content;
+  aspect-ratio: 1;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background: rgba($color: #000000, $alpha: 0.1);
+}
+/* 定义方块的基本样式 */
+.square {
+  width: 25px;
+  margin: 5px;
+  height: 80px;
+  background-color: $grey-color;
+  position: relative;
+  transform-origin: 50% 50%;
+  transform: skewX(-10deg); /* 向右歪20度 */
+  animation: moveFadeScale 0.8s linear infinite;
+}
+@for $i from 1 through 4 {
+  .square:nth-child(#{$i}) {
+    animation-delay: -($i - 1) * calc(0.8s / 5);
+  }
+}
+
+/* 定义动画的关键帧 */
+@keyframes moveFadeScale {
+  0% {
+    /* 初始位置在左边，完全不透明，原始大小 */
+    transform: scale(1) skewX(-10deg);
+  }
+
+  50% {
+    /* 移动到最右边，完全透明，恢复原始大小 */
+    transform: scale(0.6) skewX(-10deg);
+  }
+  100% {
+    /* 移动到最右边，完全透明，恢复原始大小 */
+    transform: scale(1) skewX(-10deg);
+  }
+}

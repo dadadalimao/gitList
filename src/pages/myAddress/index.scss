@@ -1,0 +1,99 @@
+.myAddress-container {
+  .list {
+    padding-top: 20px;
+    .item {
+      width: 343px;
+      box-sizing: border-box;
+      padding: 14px 16px 10px;
+      margin: 0 auto 20px;
+      border-radius: 12px;
+      background: #f4f8fb;
+      .item-content {
+        flex: 1;
+      }
+      .item-choose-edit,
+      .item-choose-btn,
+      .item-choose-default {
+        display: none;
+      }
+      .item-address {
+        word-break: break-all;
+      }
+
+      .item-line {
+        height: 12px;
+        width: 1px;
+        background: #d9d9d9;
+      }
+      .radio-nor {
+        height: 18px;
+        width: 18px;
+        border-radius: 100%;
+        box-sizing: border-box;
+        border: 1px solid #d9d9d9;
+      }
+      .footer {
+        border-top: 1px solid #d9d9d9;
+        padding-top: 10px;
+      }
+    }
+  }
+}
+.myAddress-container-choose {
+  .list {
+    .item {
+      display: flex;
+      align-items: flex-start;
+      .item-radio {
+        width: 18px;
+        height: 18px;
+        border: 1px solid #d9d9d9;
+        border-radius: 100%;
+        margin-top: 2px;
+        margin-right: 10px;
+      }
+      .item-radio-checked {
+        border: 1px solid $main-color;
+        .item-radio-checked-in {
+          background: $main-color;
+          width: 12px;
+          height: 12px;
+          border-radius: 100%;
+        }
+      }
+      .item-name {
+        margin-right: 6px;
+        white-space: nowrap;
+      }
+      .item-choose-default {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 19px;
+        border-radius: 6px;
+        color: $main-color;
+        background: $main-sec-color;
+        font-size: 12px;
+        margin-left: 6px;
+      }
+      .item-line {
+        display: none;
+      }
+      .item-content-bottom {
+        max-width: 281px;
+      }
+      .item-choose-btn {
+        display: flex;
+        white-space: nowrap;
+      }
+      .footer {
+        display: none;
+      }
+      .item-choose-edit {
+        display: block;
+        margin-left: 20px;
+      }
+    }
+  }
+}

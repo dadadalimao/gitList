@@ -1,0 +1,288 @@
+.myOrderDetail-container {
+  color: #2E2C30;
+  .main {
+    width: 343px;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 5px;
+
+    .title-order {
+      font-size: 18px;
+      height: 25px;
+      line-height: 25px;
+      margin-bottom: 5px;
+
+    }
+
+    .title-code {
+      height: 18px;
+      display: flex;
+      align-items: center;
+    margin-bottom: 3px;
+
+      .title-copy {
+        margin-left: 10px;
+        width: 13px;
+        height: 13px;
+
+        >Image {
+          width: 13px;
+          height: 13px;
+        }
+      }
+
+    }
+
+    .dogImg {
+      width: 106px;
+      height: 91px;
+
+      >Image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .c-title {
+      padding: 0 0 8px 10px;
+    }
+    // 服务宠物
+  .pets {
+    background: $grey-color;
+    border-radius: 16px;
+    padding: 8px 6px;
+    font-size: 14px;
+    color: #000;
+    padding: 10px 6px;
+    margin-bottom: 13px;
+
+    .pet {
+      .pet-item {
+        display: flex;
+        margin-bottom: 5px;
+        border-radius: 16px;
+        padding: 5px 6px;
+        width: 321px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        background: #fff;
+
+        .pet-item-img {
+          width: 64px;
+          height: 64px;
+          border-radius: 16px;
+          overflow: hidden;
+          margin-right: 10px;
+
+          >Image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .pet-item-text {
+          flex: 1;
+          font-size: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          >View {
+            &:first-child {
+              font-size: 14px;
+            }
+
+            &:nth-child(2) {
+              display: flex;
+
+            }
+          }
+
+          .pet-item-days {
+            margin-left: 18px;
+            padding-top: 3px;
+            font-size: 12px;
+          }
+
+          .pet-item-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+// 服务信息及费用
+  .cost {
+    padding: 10px 16px;
+    width: 311px;
+    margin-bottom: 13px;
+    border-radius: 16px;
+    background: $grey-color;
+
+    .cost-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+margin-bottom: 3px;
+      >View {
+        &:last-child {
+          font-size: 12px;
+          color: #8A8A8E;
+        }
+      }
+    }
+
+    .cost-body {
+padding-bottom: 8px;
+    }
+
+    .cost-b {
+      .cost-b-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        color: #8A8A8E;
+        height: 28px;
+        line-height: 28px;
+
+        Text {
+          color: #0C0C0C;
+          margin: 0 10px;
+        }
+
+        .cost-b-title-img {
+          width: 12px;
+          height: 6px;
+        }
+      }
+      .cost-b-list {
+        .cost-b-item-cost {
+          margin-bottom: 8px;
+          background: #fff;
+          border-radius: 16px;
+          padding: 8px 16px 16px 16px;
+
+          >View {
+            &:first-child {
+              color: #2E2C30;
+              margin-bottom: 8px;
+            }
+          }
+
+          .cost-b-item-img {
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            margin-right: 12px;
+            vertical-align: middle;
+          }
+
+          .cost-b-item-money {
+            display: flex;
+            justify-content: space-between;
+            color: #757575;
+            font-size: 12px;
+            margin-bottom: 8px;
+          }
+        }
+
+        .cost-b-num {
+          height: 42px;
+          line-height: 42px;
+          padding: 0 16px;
+          display: flex;
+          justify-content: space-between;
+          color: #2E2C30;
+          background: #fff;
+          border-radius: 16px;
+          font-size: 12px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+     .cost-count{
+        color: #2E2C30;
+           font-size: 12px;
+           padding-top: 12px;
+            align-items: center;
+        >View{
+          &:first-child{
+         color: #757575;
+          }
+          
+        }
+        .red16{
+          font-size: 16px;
+          color: #FF6A5F;
+        }
+      }
+  }
+  // 服务细则
+.details{
+background: $grey-color;
+padding: 10px 16px;
+border-radius: 16px;
+.details-body{
+  background: #fff;
+border-radius: 16px;
+padding:0 12px;
+color: #2E2C30;
+.details-item{
+  height: 43px;
+ padding: 10px 0;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+}
+
+.tips{
+  font-size: 12px;
+  color:#757575;
+}
+.other{
+ height: 43px;
+ padding: 10px 0;
+ align-items: center;
+>View{
+  &:last-child{
+   width: 200px;
+   text-align: right;
+  }
+}
+}
+}
+}
+}
+.btn{
+  padding-top: 25px;
+}
+.ellipsis {
+  display: inline-block;
+  width: 168px;
+  white-space: nowrap;
+  /* 禁止换行 */
+  overflow: hidden;
+  /* 隐藏溢出内容 */
+  text-overflow: ellipsis;
+  /* 使用省略号表示溢出内容 */
+}
+.flexB{
+  display: flex;
+  justify-content: space-between;
+}
+.borderB{
+    border-bottom: 1px solid #D9D9D9;
+}

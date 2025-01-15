@@ -1,0 +1,64 @@
+.service-rules {
+  background: $grey-color;
+  border-radius: 16px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  font-size: 16px;
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      margin-right: 6px;
+    }
+  }
+
+  .select-item-list {
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 12px;
+    background: #fff;
+  }
+
+  .select-item {
+    box-sizing: border-box;
+    background: #fff;
+    border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .select-text {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .item-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .item-desc {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .arrow {
+      width: 16px;
+      height: 16px;
+      transform: rotate(180deg);
+    }
+  }
+}

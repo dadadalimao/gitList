@@ -1,0 +1,72 @@
+.AlertPage-container {
+  .AlertPage {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    .AlertPage-content {
+      width: 100vw;
+      background: #ffffff;
+      border-radius: 24rpx 24rpx 0rpx 0rpx;
+      position: fixed;
+
+      padding-bottom: calc(constant(safe-area-inset-bottom) - 16px);
+      padding-bottom: calc(env(safe-area-inset-bottom) - 16px);
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      .icon_close {
+        width: 32rpx;
+        height: 32rpx;
+        display: block;
+        position: absolute;
+        right: 32rpx;
+        top: 32rpx;
+      }
+      .AlertPage-content-header {
+        padding-top: 12px;
+        .AlertPage-content-topLine {
+          width: 40px;
+          height: 4px;
+          border-radius: 7px;
+          margin: 0 auto;
+          background: #e5e5ea;
+        }
+      }
+    }
+    .AlertPage-bottom {
+      padding-bottom: 32rpx;
+    }
+  }
+  .AlertPage-mask {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+  }
+
+  .AlertPage-slot {
+    display: none;
+  }
+  .AlertPage-content {
+    transform: translateY(150%);
+    transition: transform 0.3s;
+  }
+  .AlertPage-active {
+    .AlertPage-mask-active {
+      display: block;
+    }
+    .AlertPage-content {
+      transform: translateY(0);
+      // transition: transform 0.3s;
+    }
+    .AlertPage-slot {
+      display: block;
+    }
+  }
+}

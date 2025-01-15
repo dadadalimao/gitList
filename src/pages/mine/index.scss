@@ -1,0 +1,80 @@
+.tabbar-page-container {
+  background: #f4f8fb;
+  position: relative;
+}
+
+.mine-container {
+  padding-bottom: 32px;
+  .petServices-homeBg {
+    width: 151px;
+    height: 213px;
+    display: block;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    bottom: calc(constant(safe-area-inset-bottom) + 30px);
+    bottom: calc(env(safe-area-inset-bottom) + 30px);
+  }
+  .mine-header-userName-text {
+    max-width: 146px;
+  }
+  .mine-header-avatar {
+    width: 80px;
+    height: 80px;
+    margin: 20px auto 0;
+    position: relative;
+    .mine-header-avatar-decorate-left,
+    .mine-header-avatar-decorate-right {
+      width: 42px;
+      height: 42px;
+      position: absolute;
+      top: -13px;
+    }
+    .mine-header-avatar-decorate-left {
+      left: -17px;
+      transform: rotateY(180deg);
+    }
+    .mine-header-avatar-decorate-right {
+      right: -17px;
+    }
+    .mine-header-avatar-img {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border-radius: 100%;
+      border: 2px solid $main-color;
+    }
+    .mine-header-identity-view {
+      width: 100%;
+      position: absolute;
+      bottom: -4px;
+    }
+    .mine-header-identity {
+      width: fit-content;
+      background: #fff;
+      padding: 3px;
+      border-radius: 100px;
+      line-height: 1;
+      color: $main-color;
+      .mine-header-identity-icon {
+        background: $main-color;
+        border-radius: 100%;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  .mine-header-feeder {
+    .mine-header-avatar {
+      .mine-header-identity {
+        color: $sec-color;
+        .mine-header-identity-icon {
+          background: $sec-color;
+        }
+      }
+      .mine-header-avatar-img {
+        border-color: $sec-color;
+      }
+    }
+  }
+}

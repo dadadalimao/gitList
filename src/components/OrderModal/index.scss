@@ -1,0 +1,55 @@
+.at-modal__container {
+  width: 289px;
+  height: 273px;
+  border-radius: 32px;
+  padding-bottom: 24px;
+
+}
+
+.m {
+  padding: 24px 16px 0 16px;
+
+  .m-title {
+    color: #2E2C30;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .m-body {
+    background: $grey-color;
+    height: 127px;
+    border-radius: 15px;
+    display: flex;
+    padding: 16px;
+
+    >Text {
+      color: $sec-color;
+    }
+
+  }
+}
+
+.m-footer {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 24px;
+
+  >View {
+    width: 87px;
+    height: 30px;
+    border: 1px solid $sec-color;
+    border-radius: 24px;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  .m-cancel {
+    color: $sec-color;
+  }
+
+  .m-ok {
+    background: $sec-color;
+    color: #fff;
+  }
+}

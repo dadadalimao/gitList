@@ -1,0 +1,118 @@
+.basic-info-form {
+  padding: 20px 16px 32px;
+  .form-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  .mb4 {
+    margin-bottom: 4px;
+  }
+  .submit-btn {
+    margin-top: 40px;
+  }
+  .basic-info-form-item {
+    margin-top: 12px;
+  }
+  .basic-info-form-input {
+    height: 24px;
+    line-height: 24px;
+    padding: 0;
+  }
+  .basic-info-form-address {
+    word-break: break-all;
+  }
+  .basic-info-form-placeholder {
+    color: #c3c3c3;
+  }
+  .gender-select {
+    padding: 20px 16px;
+    .gender-select-title {
+      font-size: 20px;
+      font-weight: bold;
+      padding-bottom: 12px;
+      text-align: center;
+    }
+    .gender-option {
+      width: 343px;
+      height: 120px;
+      border-radius: 12px;
+      position: relative;
+      box-sizing: border-box;
+      background: $grey-color;
+      border: 2px solid $grey-color;
+      font-size: 20px;
+      margin-top: 48px;
+      padding-left: 40px;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      .gender-option-img {
+        width: 150px;
+        height: 142px;
+        position: absolute;
+        right: 24px;
+        bottom: 0;
+      }
+    }
+    .gender-option-selected {
+      background: $main-sec-color;
+      border: 2px solid $main-color;
+    }
+    .gender-select-btn {
+      margin-top: 40px;
+    }
+    .gender-select-btn-cancel,
+    .gender-select-btn-confirm {
+      width: 150px;
+      height: 48px;
+      font-size: 16px;
+    }
+  }
+  .pet-type-list {
+    display: flex;
+    flex-wrap: wrap;
+    .pet-type {
+      width: 100px;
+      height: 80px;
+      padding-top: 4px;
+      padding-left: 6px;
+      font-size: 12px;
+      color: #757575;
+      box-sizing: border-box;
+      border: 1px solid #c3c3c3;
+      border-radius: 12px;
+      position: relative;
+      margin-right: calc((33% - 100px) * 1.5);
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      .pet-type-img {
+        width: 64px;
+        height: 50px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+      }
+      .pet-type-radio {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: 1px solid #c3c3c3;
+        border-radius: 100%;
+        position: absolute;
+        right: 4px;
+        top: 4px;
+      }
+    }
+    .pet-type-selected {
+      border: 1px solid $main-color;
+      color: $main-color;
+      background: $main-sec-color;
+      .pet-type-radio {
+        border: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.submit-button-container {
+  margin-top: 20px;
+  .submit-button-list {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 16px;
+    .submit-button {
+      width: 150px;
+      height: 48px;
+    }
+  }
+}

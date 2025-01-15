@@ -1,0 +1,35 @@
+.joinGroupChat-container {
+  min-height: 100vh;
+  background: #f6f7f9;
+  padding: 10px 16px 32px;
+  box-sizing: border-box;
+  .pet-group-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    .qr-code {
+      width: 50px;
+      height: 50px;
+      margin-right: 9px;
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+
+      .group-name {
+        font-size: 18px;
+        font-weight: bold;
+        width: 250px;
+      }
+
+      .valid-time {
+        margin-top: 5px;
+        font-size: 12px;
+      }
+    }
+  }
+}

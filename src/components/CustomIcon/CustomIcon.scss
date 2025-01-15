@@ -1,0 +1,41 @@
+.custom-icon {
+  @mixin icon-bar {
+    // width: 8px;
+    // height: 2px;
+    background: #ffffff;
+    // border-radius: 2px;
+  }
+  .key-del {
+    border-radius: 50%;
+    background: #ff6a5f;
+    .key-del-in {
+      @include icon-bar;
+    }
+  }
+  //
+  .key-add {
+    border-radius: 50%;
+    background: #ffc93e;
+    position: relative;
+    .key-add-in {
+      position: absolute;
+      top: 0;
+      left: 0;
+      .key-add-in-in {
+        @include icon-bar;
+      }
+      &:first-of-type {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .radioNor {
+    border-radius: 100%;
+    border: 1px solid #c3c3c3;
+    box-sizing: border-box;
+  }
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}

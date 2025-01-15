@@ -1,0 +1,71 @@
+.myPet-page {
+  .myPet-content {
+    background: #fff;
+    border-radius: 32px 32px 0 0;
+    padding: 20px 16px;
+    padding-bottom: calc(96px + 16px);
+    .myPet-item {
+      background: #fff;
+      box-shadow: 0px 5px 25px 0px #2e2c300f;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      .myPet-item-footer {
+        min-height: 34px;
+        padding: 9px 10px 7px;
+        box-sizing: border-box;
+        .myPet-item-footer-selDates {
+          border: 1px solid $main-color;
+          border-radius: 16px;
+          padding: 2px 10px;
+          color: $main-color;
+          width: fit-content;
+          margin-left: 11px;
+          font-size: 12px;
+        }
+      }
+
+      .myPet-item-content {
+        flex: 1;
+        display: flex;
+        background: $grey-color;
+        padding: 7px;
+        border-radius: 16px;
+        .myPet-item-img {
+          width: 80px;
+          height: 80px;
+          border-radius: 16px;
+          display: block;
+        }
+        .myPet-item-info {
+          flex: 1;
+          box-sizing: border-box;
+          padding-left: 12px;
+        }
+        .myPet-item-radio-empty {
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: #fff;
+          border: 1px solid #c3c3c3;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+  .footer {
+    padding: 0 16px;
+    .footer-btn {
+      width: 160px;
+      height: 48px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.footer-btn-add {
+        background: #fff;
+        border: 1px solid $main-color;
+        color: $main-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@font-face {
+  font-family: 'Montserrat'; /*字体名称*/
+  src: url('../../../../assets/fonts/Montserrat-Bold-min.ttf'); /*字体源文件*/
+}
+.deposit-container {
+  padding: 12px 16px;
+  padding-bottom: 32px;
+
+  .deposit-card {
+    width: 343px;
+    height: 120px;
+    position: relative;
+    margin-bottom: 20px;
+    .deposit-card-img {
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+    .deposit-card-woffie {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 92px;
+      height: 34px;
+      z-index: 2;
+    }
+    .deposit-card-content {
+      padding: 14px;
+      padding-top: 42px;
+      box-sizing: border-box;
+      color: #ffffff;
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      left: 0;
+    }
+    .deposit-desc {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      background: linear-gradient(180deg, #c27be5 -9.68%, #9249b7 58.12%, #6a3386 79.53%);
+      -webkit-background-clip: text; /* Safari 和 Chrome 需要添加前缀 */
+      background-clip: text;
+      -webkit-text-fill-color: transparent; /* Safari 和 Chrome 需要添加前缀 */
+      text-fill-color: transparent;
+    }
+    .deposit-subtitle {
+      font-size: 12px;
+      color: $main-color;
+    }
+    .deposit-amount {
+      .deposit-amount-num {
+        width: 80px;
+        height: 30px;
+      }
+      .deposit-amount-base {
+        width: 71px;
+        height: 30px;
+      }
+    }
+  }
+
+  .supplies-section {
+    background: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 20px;
+
+    .section-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .supplies-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); // 创建3列等宽的网格布局
+      gap: 12px; // 设置网格项之间的间距为12像素
+
+      .supply-item {
+        text-align: center;
+
+        .supply-image {
+          width: 80px;
+          height: 80px;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 6px;
+        }
+
+        .supply-name {
+          font-size: 14px;
+          color: #333;
+        }
+      }
+    }
+  }
+
+  .deposit-info {
+    .info-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .info-content {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #757575;
+      .highlight {
+        color: #2e2c30;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .pay-button {
+    margin-top: 44px;
+  }
+}

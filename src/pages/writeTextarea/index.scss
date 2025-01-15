@@ -1,0 +1,27 @@
+.writeTextarea-container {
+  padding: 20px 16px;
+  font-size: 14px;
+  .content {
+    margin: 0 auto;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: $grey-color;
+    position: relative;
+    .textarea {
+      width: 100%;
+      box-sizing: border-box;
+      height: 166px;
+    }
+    .textarea-placeholder {
+      white-space: nowrap;
+    }
+    .textarea-count {
+      position: absolute;
+      right: 16px;
+      top: 166px;
+    }
+  }
+  .btn-submit {
+    margin-top: 80px;
+  }
+}

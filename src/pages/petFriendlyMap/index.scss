@@ -1,0 +1,321 @@
+.container {
+  overflow: hidden;
+  position: relative;
+  .map {
+    height: calc(100% + 32px);
+  }
+  .search-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    .search-content {
+      width: 341px;
+      height: 40px;
+      box-sizing: border-box;
+      padding: 0 16px;
+      background: #fff;
+      box-shadow: 0px 4px 16px 0px #120c061a;
+      border-radius: 12px;
+      .search-content-left {
+        flex: 1;
+      }
+      .search-input {
+        flex: 1;
+        font-size: 14px;
+        box-sizing: border-box;
+        padding-left: 6px;
+      }
+    }
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    .footer-btn {
+      width: 327px;
+      margin: 0 auto;
+      position: relative;
+      .footer-apply-annotation {
+        width: 203px;
+        height: 48px;
+        position: absolute;
+        left: 0;
+        bottom: 16px;
+      }
+      .footer-my-application {
+        width: 131px;
+        height: 48px;
+        position: absolute;
+        right: 0;
+        bottom: 16px;
+      }
+      .footer-btn-bg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .footer-btn-item {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+// 详情
+.MapAlertPage-container {
+  box-sizing: border-box;
+  transition: height 0.3s;
+  .MapAlertPage-content {
+    padding: 0 16px;
+    position: relative;
+  }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    padding-top: 20px;
+    &:first-of-type {
+      padding-top: 0;
+    }
+    .areaType {
+      height: 24px;
+      line-height: 24px;
+    }
+  }
+
+  .imgView {
+    margin-top: 12px;
+    overflow: auto;
+    .flex {
+      width: fit-content;
+    }
+    .area-img {
+      width: 110px;
+      height: 80px;
+      border-radius: 12px;
+      display: block;
+      margin-right: 12px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+  .WriteComment {
+    width: 343px;
+    height: 68px;
+    box-sizing: border-box;
+    padding: 8px;
+    padding-right: 12px;
+    border-radius: 24px;
+    margin-top: 10px;
+    background: radial-gradient(
+        circle at right,
+        rgba(73, 218, 234, 0.4) 0%,
+        rgba(73, 218, 234, 0) 50%
+      ),
+      rgba(255, 255, 255, 0.2);
+    .WriteComment-btn {
+      padding: 4px 8px;
+      background: #fff;
+      border-radius: 40px;
+    }
+  }
+
+  .marker-filter-icon-active {
+    box-shadow: 0px 4px 4px 0px #ffae0033;
+  }
+}
+.write-comment {
+  padding: 12px 16px;
+  box-shadow: 0px -20px 20px 0px #1e1c1c1a;
+  background: #fff;
+  .user-avatar {
+    width: 34px;
+    height: 34px;
+    display: block;
+  }
+  .write-comment-input {
+    flex: 1;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    border-radius: 12px;
+    background: #ededed;
+  }
+}
+// 超出部分
+.MapAlertPageExpand {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  .expand-left {
+    position: absolute;
+    left: 16px;
+    bottom: 0;
+  }
+  .expand-right {
+    position: absolute;
+    right: 16px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    .expand-right-item {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      height: 32px;
+      padding: 4px 10px;
+      border-radius: 24px;
+      border: 1px solid transparent;
+      color: #999;
+      margin-top: 12px;
+      box-shadow: 0px 8px 14px 2px #120c060d;
+      .icon24 {
+        margin-right: 4px;
+        border-radius: 100%;
+      }
+    }
+    .c_friendly {
+      color: $friendly-color;
+    }
+    .c_unfriendly {
+      color: $unfriendly-color;
+    }
+    .c_poisoning {
+      color: $poisoning-color;
+    }
+    .border_friendly {
+      border: 1px solid $friendly-color;
+    }
+    .border_unfriendly {
+      border: 1px solid $unfriendly-color;
+    }
+    .border_poisoning {
+      border: 1px solid $poisoning-color;
+    }
+    .border_friendly {
+      .icon24 {
+        box-shadow: 0px 4px 4px 0px rgba($color: $friendly-color, $alpha: 0.5);
+      }
+    }
+    .border_unfriendly {
+      .icon24 {
+        box-shadow: 0px 4px 4px 0px rgba($color: $unfriendly-color, $alpha: 0.5);
+      }
+    }
+    .border_poisoning {
+      .icon24 {
+        box-shadow: 0px 4px 4px 0px rgba($color: $poisoning-color, $alpha: 0.5);
+      }
+    }
+  }
+}
+// 评论
+.user-comments {
+  min-height: 170px;
+  padding-bottom: 32px;
+  .message {
+    display: flex;
+    margin-top: 8px;
+    .message-content {
+      flex: 1;
+      .message-text {
+        margin-top: 4px;
+        word-break: break-all; // 强制换行
+        // 或者
+        overflow-wrap: break-word; // 类似效果
+      }
+    }
+    .message-actions {
+      min-height: 18px;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 4px;
+      .message-actions-item {
+        min-height: 22px;
+        padding: 0 8px;
+      }
+    }
+  }
+}
+.message-children {
+  .user-comments {
+    .message {
+      margin-top: 0;
+    }
+  }
+}
+
+.ApplyAnnotation-container {
+  padding: 0 16px 16px;
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  .ApplyAnnotation-address {
+    padding: 8px;
+    background: $grey-color;
+    font-family: PingFang SC;
+    font-size: 14px;
+    line-height: 22px;
+    border-radius: 12px;
+  }
+  .ApplyAnnotation-address-none {
+    padding-left: 14px;
+  }
+
+  .annotationType {
+    line-height: 1;
+    flex-wrap: wrap;
+    .annotationType-item {
+      width: 100px;
+      height: 36px;
+      background: $grey-color;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .annotationType-item-active {
+      color: #fff;
+    }
+  }
+  .msg {
+    width: 343px;
+    height: 80px;
+    border-radius: 12px;
+    border: 1px solid #eae9e5;
+    box-sizing: border-box;
+    padding: 12px;
+  }
+  .UploadImg {
+    padding-right: 11px;
+  }
+}
+.JoinGroupImg {
+  width: 51px;
+  height: 60px;
+  display: block;
+}
+.JoinGroupImg-fixed {
+  position: fixed;
+  right: 16px;
+  top: 35vh;
+}

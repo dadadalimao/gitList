@@ -1,0 +1,64 @@
+.myAddressAdd-container {
+  padding-top: 20px;
+  .form-content {
+    width: 343px;
+    box-sizing: border-box;
+    padding: 12px 16px 18px;
+    margin: 0 auto 20px;
+    border-radius: 12px;
+    background: #f4f8fb;
+  }
+  .radio-nor {
+    height: 18px;
+    width: 18px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d9d9d9;
+  }
+  .input {
+    flex: 1;
+  }
+  .input-list {
+    padding-top: 2px;
+  }
+  .input-item {
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 22px;
+    margin-top: 8px;
+    display: flex;
+    align-items: start;
+    .input-address {
+      width: 172px;
+    }
+    .input-label {
+      width: 56px;
+      margin-right: 10px;
+      white-space: nowrap;
+      text-align: justify;
+      min-height: 23px;
+    }
+    .input-line {
+      width: 1px;
+      height: 12px;
+      background: #d9d9d9;
+    }
+    .input-value {
+      flex: 1;
+      padding-left: 10px;
+      min-height: 23px;
+      display: flex;
+      align-items: center;
+      .icon18 {
+        margin-right: -4px;
+      }
+    }
+  }
+}
+
+.textarea {
+  width: 100%;
+  min-height: 23px;
+  padding: 5px 0;
+  box-sizing: border-box;
+}

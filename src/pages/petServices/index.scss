@@ -1,0 +1,198 @@
+.tabbar-page-container {
+  background: #f4f8fb;
+  position: relative;
+}
+
+.petServices-homeBg {
+  width: 151px;
+  height: 213px;
+  display: block;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  bottom: calc(constant(safe-area-inset-bottom) + 30px);
+  bottom: calc(env(safe-area-inset-bottom) + 30px);
+}
+.petServices-container {
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 2;
+  .petServices-header {
+    background: #ebd8f4;
+    position: relative;
+    height: calc(44px + 109px);
+    overflow: hidden;
+
+    .petServices-header-bg {
+      position: absolute;
+      width: 289.65px;
+      height: 303.22px;
+      top: 0;
+      right: 0;
+      // bottom: -106px;
+      // left: 85.35px;
+    }
+    .petServices-header-content {
+      padding: 26px 16px 0;
+      color: #757575;
+      font-size: 10px;
+    }
+    .petServices-header-title {
+      color: #1b1b1b;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+ 
+  .banner {
+    width: 375px;
+    height: 168px;
+    margin: 0 auto;
+    margin-top: -69px;
+  }
+  .nav {
+    padding: 14px 16px 0;
+
+    .nav-item {
+      position: relative;
+      padding-top: 10px;
+      padding-left: 13px;
+      width: 166px;
+      height: 80px;
+      border-radius: 16px;
+      box-sizing: border-box;
+
+      .nav-item-title {
+        font-size: 16px;
+        height: 22px;
+        line-height: 22px;
+        color: #2e2c30;
+      }
+      .nav-item-info {
+        height: 20px;
+        width: fit-content;
+        border-radius: 10px;
+        white-space: nowrap;
+        font-size: 12px;
+        background: #fff;
+        padding: 0 6px;
+        display: flex;
+        align-items: center;
+      }
+      .nav-item-img {
+        position: absolute;
+        bottom: -5px;
+        right: -9px;
+        width: calc(126px / 2);
+        height: calc(136px / 2);
+      }
+    }
+    .nav-item-adopt {
+      background: linear-gradient(321.72deg, #fbf1ff 1.06%, #debfed 97.3%);
+    }
+    .nav-item-map {
+      background: linear-gradient(280.53deg, #fff7e7 0.69%, #ffe09d 97.55%);
+      .nav-item-img {
+        position: absolute;
+        bottom: -8px;
+        right: -6px;
+        width: calc(124px / 2);
+        height: calc(134px / 2);
+      }
+    }
+  }
+
+  .feeder {
+    width: 343px;
+    height: 68px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    margin: 14px auto 0;
+    border-radius: 16px;
+    position: relative;
+    .feeder-bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+    }
+    .feeder-btn {
+      width: 80px;
+      height: 32px;
+      border-radius: 16px;
+      line-height: 1;
+    }
+    .feeder-text {
+      width: calc(344px / 2);
+      height: calc(74px / 2);
+      display: block;
+    }
+    .feeder-content {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+.services-card {
+  width: 343px;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  margin: 14px auto 0;
+  background: rgba($color: #fff, $alpha: 1);
+  border-radius: 24px;
+  .services-time {
+    margin-top: 26px;
+    .services-time-line {
+      width: 1px;
+      height: 14px;
+      background: #999;
+    }
+  }
+  .services-btn {
+    position: relative;
+    height: 46px;
+    overflow: hidden;
+    .services-btn-specify,
+    .services-btn-random,
+    .services-btn-block {
+      height: 100%;
+      border-radius: 24px;
+      position: absolute;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+    .services-btn-specify {
+      width: 169px;
+      left: 0;
+      z-index: 1;
+    }
+    .services-btn-block {
+      width: 181.65px;
+      left: 144.85px;
+      background: #fff;
+      z-index: 2;
+    }
+    .services-btn-random {
+      width: 161px;
+      right: 0;
+      z-index: 3;
+    }
+  }
+  .services-card-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    display: block;
+  }
+  .rating-number {
+    padding: 1px 5px;
+    border-radius: 2px;
+    color: #fff;
+  }
+}

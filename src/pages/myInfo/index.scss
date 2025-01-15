@@ -1,0 +1,211 @@
+.myInfo-container {
+  padding: 0 32px;
+  padding-bottom: calc(constant(safe-area-inset-bottom) + 114px);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 114px);
+
+  .list {
+    padding-top: 15px;
+    padding-bottom: 55px;
+
+    .list-item {
+      height: 58px;
+      border-radius: 29px;
+      box-sizing: border-box;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: #eae9e5;
+
+      &:nth-child(6) {
+        height: 173px;
+      }
+    }
+
+    .skill-item {
+      min-height: 78px;
+      padding: 10px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: space-between;
+
+
+      >View {
+        &:first-child {
+          margin-right: 10px;
+        }
+      }
+
+      .skill-items {
+        // position: relative;
+        width: 50px;
+        padding: 0 5px;
+        height: 20px;
+        margin-right: 5px;
+        line-height: 20px;
+        border-radius: 12px;
+        border: 1px solid #FFC93E;
+        color: #FFC93E;
+        font-size: 10px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        // .skill-items-del {
+        //   position: absolute;
+        //   width: 15px;
+        //   height: 20px;
+        //   line-height: 20px;
+        //   text-align: center;
+        //   font-size: 20px;
+        //   right: 0;
+        //   top: 0;
+        //   background: $sec-color;
+        //   color: #fff;
+
+        // }
+
+        &:last-child {
+          background: #FFC93E;
+          color: #000;
+          margin-right: 0;
+        }
+      }
+    }
+
+    .pic {
+      font-size: 16px;
+      line-height: 22px;
+      color: #2e2c30;
+      height: 22px;
+      padding: 5px 0 0 0;
+
+    }
+
+    .list-item-radio {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 42px;
+    }
+
+    .list-item-radio-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: none;
+      padding: 4px 0;
+    }
+
+    .list-item-selected {
+      position: relative;
+      background: $sec-color;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      margin-right: 3px;
+    }
+
+    .list-item-select {
+      position: relative;
+      background: #c3c3c3;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      margin-right: 3px;
+    }
+
+    .list-item-select-img {
+      width: 14px;
+      height: 14px;
+    }
+
+    .name {
+      color: #757575;
+      // font-size: 12px;
+      width: 63px;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .intro-title {
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      padding: 0 18px;
+      margin-bottom: 20px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: #eae9e5;
+      border-radius: 27px;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+
+      .intro-text {
+        width: 274px;
+        color: #2E2C30;
+        font-size: 12px;
+        line-height: 2;
+      }
+    }
+
+    .line {
+      background: #eae9e5;
+      width: 1px;
+      height: 12px;
+    }
+
+    .right {
+      color: #000;
+      flex: 1;
+      box-sizing: border-box;
+      padding-left: 10px;
+      // font-size: 12px;
+      height: 100%;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+
+      .right-view {
+        width: 100%;
+      }
+    }
+
+    .intro-right {
+      line-height: 1;
+      padding: 15px 0;
+
+    }
+
+    .right-img {
+      height: 24px;
+      width: 24px;
+      line-height: 24px;
+
+      image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .btn {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    width: 327px;
+    height: 40px;
+    color: #3c3c4399;
+    line-height: 40px;
+    font-size: 16px;
+    background: #fff;
+    border: 1px solid #3c3c434d;
+  }
+}

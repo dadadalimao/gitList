@@ -1,0 +1,220 @@
+.myOrder-container {
+  padding: 20px 0;
+  min-height: 100vh;
+
+  .myOrder-main {
+    width: 343px;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+.h18{
+  height: 18px;
+  line-height: 18px;
+}
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+margin-bottom: 12px;
+    >View {
+      height: 26px;
+      line-height: 26px;
+      padding: 0 10px;
+      background: none;
+      border-radius: 24px;
+      font-size: 12px;
+      color: #757575;
+      position: relative;
+    }
+
+    >View.active {
+      background: $main-color;
+      color: #fff;
+    }
+  }
+
+  .orders {
+    color: #2E2C30;
+
+    .order {
+      width: 327px;
+      height: 225px;
+      border-radius: 16px;
+      box-shadow: 0 5px 25px 0 #2E2C300F;
+      padding: 0 16px 12px 0;
+      position: relative;
+      z-index: 9999;
+      font-size: 12px;
+
+      .title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: -1px;
+
+        .title-logo {
+          color: #fff;
+          text-align: center;
+          width: 82px;
+          height: 32px;
+          line-height: 32px;
+          background: $main-color;
+          border-bottom-right-radius: 16px;
+          border-top-left-radius: 16px;
+          font-size: 14px;
+        }
+
+        .title-time {
+          color: #757575;
+        }
+
+        .title-code {
+          height: 18px;
+          margin-left: 10px;
+          padding-top: 7px;
+          display: flex;
+          display: flex;
+          align-items: center;
+
+          .title-copy {
+            margin-left: 10px;
+            width: 13px;
+            height: 13px;
+
+            >Image {
+              width: 13px;
+              height: 13px;
+            }
+          }
+
+        }
+
+        .title-pay {
+          padding-top: 7px;
+          color: red;
+          text-align: right;
+        }
+
+        >View {
+          &:first-child {
+            display: flex;
+          }
+        }
+      }
+
+      .content {
+        padding-left: 16px;
+
+        .address {
+          color: #2E2C30;
+          margin-bottom: 10px;
+        }
+
+        .petImgs {
+          display: flex;
+          justify-content: space-between;
+
+          .imgs {
+            display: flex;
+
+            .img {
+               margin-right: 5px;
+              >Image {
+                width: 60px;
+                height: 60px;
+                border-radius: 16px;
+              }
+
+              >View {
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+              }
+            }
+          }
+           .num{
+          height: 60px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          >View{
+              color: #2E2C30;
+            &:first-child{
+              text-align: right;
+              font-size: 14px;
+            
+            }
+          
+          }
+        }
+        }
+        .days{
+          margin: 8px 0 13px 0;
+          color: #757575;
+        }
+ .btn {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 12px;
+    }
+      }
+
+   
+    }
+
+   
+
+  }
+}
+
+.myOrder-btn {
+  height: 30px;
+  line-height: 30px;
+  width: 76px;
+  text-align: center;
+  border-radius: 16px;
+  border: 1px solid $main-color;
+}
+
+.bg_none {
+  background: #fff;
+  color: $main-color;
+  margin: 0 5px 0 20px;
+}
+
+.bg_main {
+  background: $main-color;
+  color: #fff;
+}
+
+
+
+.at-swipe-action__options {
+  z-index: -1;
+  width: 77px;
+  background: #fff;
+
+  .at-swipe-action__option {
+    width: 77px;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    padding: 0;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+}
+
+.at-swipe-action__area {
+  width: 343px !important;
+  overflow: hidden;
+  border-radius: 16px;
+
+}
+
+.at-swipe-action__content {
+  width: 420px !important;
+}
+.ellipsis {
+    white-space: nowrap;        /* 禁止换行 */
+    overflow: hidden;           /* 隐藏溢出内容 */
+    text-overflow: ellipsis;    /* 使用省略号表示溢出内容 */
+  }

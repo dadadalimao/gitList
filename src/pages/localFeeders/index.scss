@@ -1,0 +1,135 @@
+.localFeeders-header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 171px;
+}
+.f {
+  transform: translateY(-78px);
+  padding: 10px 16px 0 16px;
+  color: #2e2c30;
+  font-size: 14px;
+  .f-top {
+    font-weight: 500;
+    color: #757575;
+    background: #fff;
+    border-radius: 16px;
+    padding: 0 16px;
+    .f-top-item {
+      display: flex;
+      align-items: center;
+      height: 39px;
+      .f-top-icon {
+        width: 16px;
+        height: 16px;
+      }
+      .f-top-text {
+        flex: 1;
+        padding: 0 10px;
+        white-space: nowrap;
+        /* 防止文本换行 */
+        overflow: hidden;
+        /* 超出部分隐藏 */
+        text-overflow: ellipsis;
+        /* 显示省略号 */
+      }
+    }
+  }
+  .f-list {
+    padding-top: 10px;
+    .f-tab {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      .pet-type {
+        display: flex;
+        width: 72px;
+        height: 44px;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+        border-radius: 30px;
+        color: #c3c3c3;
+        font-size: 16px;
+        padding: 0 16px;
+        > Image {
+          opacity: 0.4;
+        }
+      }
+      .pet-type-selected {
+        background: $main-color;
+        color: #fff;
+        > Image {
+          opacity: 1;
+        }
+      }
+      .pet-type-img {
+        width: 28px;
+        height: 27px;
+      }
+    }
+    .f-content {
+      .f-item {
+        padding: 10px 16px;
+        background: #fff;
+        margin-bottom: 10px;
+        > View {
+          &:first-child {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+        .f-item-top {
+          display: flex;
+          align-items: center;
+          > Image {
+            width: 66px;
+            height: 66px;
+            border-radius: 50%;
+          }
+          .f-item-text {
+            > View {
+              display: flex;
+              font-size: 12px;
+              &:first-child {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                color: #4c4454;
+              }
+              &:nth-child(2) {
+                display: flex;
+                align-items: center;
+                color: $sec-color;
+              }
+              &:nth-child(3) {
+                color: #c3c3c3;
+              }
+            }
+            .text-star {
+              display: flex;
+              align-items: center;
+              margin-left: 5px;
+              padding: 8px 0;
+              > Image {
+                width: 12px;
+                height: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 16px 50px 16px;
+  background: #f4f8fb;
+}

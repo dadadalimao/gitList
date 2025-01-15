@@ -1,0 +1,70 @@
+.at-modal__container {
+  width: 289px;
+  // height: 273px;
+  border-radius: 32px;
+  padding-bottom: 24px;
+
+}
+
+.m {
+  padding: 24px 16px 0 16px;
+
+  .m-title {
+    color: #2E2C30;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .m-body {
+    background: $grey-color;
+    height: 127px;
+    border-radius: 15px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .m-body-item {
+      display: flex;
+      align-items: center;
+
+      .m-body-item-check {
+        margin-right: 10px;
+      }
+      .radio_nor {
+    width: 14px;
+    height: 14px;
+    box-sizing: border-box;
+    border: 1px solid #c3c3c3;
+    border-radius: 100%;
+  }
+    }
+
+
+  }
+}
+
+.m-footer {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 24px;
+
+  >View {
+    width: 87px;
+    height: 30px;
+    border: 1px solid $sec-color;
+    border-radius: 24px;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  .m-cancel {
+    color: $sec-color;
+  }
+
+  .m-ok {
+    background: $sec-color;
+    color: #fff;
+  }
+}

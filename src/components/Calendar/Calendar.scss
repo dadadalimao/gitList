@@ -1,0 +1,91 @@
+:root,
+page {
+  --nutui-color-primary: #a869c6;
+}
+
+.calendar-container {
+  // 底部按钮的容器
+  .nut-calendar-footer {
+    > .h5-div {
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    .calendar-footer {
+      padding: 0 24px;
+      .confirm-btn,
+      .cancel-btn {
+        box-sizing: border-box;
+        width: 160px;
+        height: 48px;
+        margin: 16px 0;
+      }
+      .cancel-btn {
+        color: $main-color;
+        border: 1px solid $main-color;
+      }
+    }
+  }
+  // 星期
+  // .nut-calendar-week-item {
+  //   &:last-of-type,
+  //   &:first-of-type {
+  //     color: $main-color;
+  //   }
+  // }
+  // 选中日期
+  .nut-calendar-day-active {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // 选中日期文字
+    .nut-calendar-day-day {
+      background: $main-color;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  // 日期
+  .nut-calendar-day-day {
+    font-size: 14px;
+    line-height: 13px;
+  }
+  // 日期底部信息 价格
+  .info {
+    font-size: 11px;
+  }
+  // 当前日期
+  .nut-calendar-day-info-curr {
+    display: none;
+  }
+  // 禁用日期
+  .nut-calendar-day-disabled {
+    .nut-calendar-day-day {
+      text-decoration: line-through;
+    }
+    .info {
+      display: none;
+    }
+  }
+  // 顶部月份标题
+  .nut-calendar-sub-title {
+    text-align: left;
+    padding-left: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  // 月份内容块
+  .nut-calendar-month {
+    padding: 0 20px;
+  }
+
+  // 月份内容块的月份标题
+  .nut-calendar-month-title {
+    text-align: left;
+    font-size: 18px;
+  }
+}

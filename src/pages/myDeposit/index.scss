@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'Montserrat'; /*字体名称*/
+  src: url('../../assets/fonts/Montserrat-Bold-min.ttf'); /*字体源文件*/
+}
+.my-deposit {
+  min-height: 100vh;
+  background: #fff;
+  .header {
+    padding: 16px;
+    padding-top: 32px;
+    height: 118px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    .catImg {
+      width: 183px;
+      height: 144px;
+      display: block;
+      position: absolute;
+      right: 10px;
+      top: 4px;
+    }
+
+    .amount-section {
+      .label {
+        font-size: 14px;
+        color: #2e2c30;
+        margin-bottom: 8px;
+        display: block;
+        .label-img{
+          width: 20px;
+          height: 20px;
+          vertical-align: middle;
+          margin-left: 5px;
+        }
+      }
+
+      .amount {
+        font-size: 42px;
+        font-family: 'Montserrat';
+        color: #2e2c30;
+      }
+    }
+  }
+  .recharge-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 343px;
+    height: 80px;
+    box-sizing: border-box;
+    padding: 0 24px 0 16px;
+    margin: 0 auto;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0px 5px 25px 0px #2e2c300f;
+
+    .recharge-btn {
+      width: 100px;
+      height: 40px;
+      background: linear-gradient(269.63deg, #f3d076 0.32%, #f8e8bf 100.52%);
+      border: 1px solid;
+      border-image-source: linear-gradient(293.32deg, #ffedbf 4.33%, #fef4db 97.45%);
+      border-radius: 24px;
+      font-size: 16px;
+      color: #7b5e14;
+      font-weight: bold;
+      position: relative;
+      .recharge-btn-up {
+        width: 29px;
+        height: 29px;
+        position: absolute;
+        right: -8px;
+        bottom: 0;
+      }
+    }
+  }
+  .tip {
+    font-size: 14px;
+    color: #2e2c30;
+    margin-bottom: 4px;
+  }
+
+  .sub-tip {
+    font-size: 12px;
+    color: #757575;
+  }
+
+  .records {
+    margin-top: 20px;
+    padding: 0 16px 32px;
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2e2c30;
+    }
+
+    .record-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0 8px;
+      border-bottom: 1px solid #d9d9d9;
+      &:last-of-type {
+        border: none;
+      }
+      .left {
+        .type {
+          font-size: 14px;
+          color: #333;
+          display: block;
+          margin-bottom: 4px;
+        }
+
+        .date {
+          font-size: 12px;
+          color: #757575;
+        }
+      }
+
+      .amount {
+        font-size: 24px;
+        font-family: 'Montserrat';
+        color: $sec-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,134 @@
+.f {
+  position: relative;
+  background: #fff;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  transform: translateY(-18px);
+  padding: 16px 16px 0 16px;
+  font-size: 12px;
+  color: #2e2c30;
+  .f-avatar {
+    position: absolute;
+    width: 74px;
+    height: 74px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    top: -38px;
+    left: 16px;
+    > Image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .f-title {
+    font-size: 16px;
+    padding: 21px 0 12px 0;
+    height: 22px;
+    line-height: 22px;
+    .more {
+      float: right;
+      font-size: 11px;
+      color: #757575;
+      > Image {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+      }
+    }
+  }
+  .f-name {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    .f-type {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-size: 10px;
+      margin-left: 10px;
+      > View {
+        padding: 0px 10px;
+        height: 18px;
+        line-height: 18px;
+        border-radius: 5px;
+        margin-right: 2px;
+      }
+      .type-bg1 {
+        background: #97d351;
+      }
+      .type-bg2 {
+        background: $sec-color;
+      }
+      .type-bg3 {
+        background: $main-color;
+      }
+    }
+  }
+  .f-age {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #757575;
+    height: 15px;
+    line-height: 15px;
+    font-size: 11px;
+    padding: 10px 0;
+    .f-age-left {
+      display: flex;
+      > View {
+        background: #ebd8f4;
+        border-radius: 6px;
+        color: $main-color;
+        margin-right: 15px;
+        padding: 0 3px;
+      }
+    }
+  }
+  .f-intro {
+    background: $grey-color;
+    padding: 8px 16px;
+    border-radius: 16px;
+    word-wrap: break-word;
+  }
+  .skill {
+    display: flex;
+    > View {
+      width: 80px;
+      height: 31px;
+      line-height: 31px;
+      border-radius: 30px;
+      text-align: center;
+      margin-right: 14px;
+      font-size: 13px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .skill-bg1 {
+      background: #ffebcd;
+      color: #9b8769;
+    }
+    .skill-bg2 {
+      background: #e0cdff;
+      color: #7c699b;
+    }
+    .skill-bg3 {
+      background: #ffcdd6;
+      color: #9b6972;
+    }
+    .skill-bg4 {
+      background: #daffcd;
+      color: #7c9b69;
+    }
+  }
+}
+
+.btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 16px 50px 16px;
+  background: #fefefe;
+}

@@ -1,0 +1,424 @@
+// $main-color: #a869c6;
+// $main-sec-color: #ebd8f4;
+// $sec-color: #ffc93e;
+// $grey-color: #F4F8FB;
+
+.tabbar-page-container {
+  padding-bottom: calc(constant(safe-area-inset-bottom) + 50px + 6px);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 50px + 6px);
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+/*隐藏滚动条*/
+view::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  /* 防止文本换行 */
+  overflow: hidden;
+  /* 超出部分隐藏 */
+  text-overflow: ellipsis;
+  /* 显示省略号 */
+}
+.break-all {
+  word-break: break-all;
+}
+
+.block {
+  display: block;
+}
+
+.circle {
+  border-radius: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-space-around {
+  justify-content: space-around;
+}
+
+.flex-space-between {
+  justify-content: space-between;
+}
+
+.flex_start {
+  @extend .flex;
+  align-items: start;
+}
+
+.flex_ic {
+  @extend .flex;
+  @extend .flex-align-center;
+}
+
+.flex_cc {
+  @extend .flex;
+  @extend .flex-align-center;
+  @extend .flex-justify-center;
+}
+
+.flex_ccc {
+  @extend .flex_cc;
+  @extend .flex-column;
+}
+
+.flex_csa {
+  @extend .flex;
+  @extend .flex-align-center;
+  @extend .flex-space-around;
+}
+
+.flex_csb {
+  @extend .flex;
+  @extend .flex-align-center;
+  @extend .flex-space-between;
+}
+
+.resetBtn {
+  line-height: normal;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  border: none;
+  width: auto;
+  height: auto;
+  position: relative;
+  z-index: 99;
+  overflow: visible;
+}
+
+.resetBtn::after {
+  border: none;
+}
+
+.btn_max {
+  width: 327px;
+  height: 48px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+.btn_plain {
+  @extend .flex_cc;
+  border: 1px solid #eae9e5;
+  color: #999999;
+  border-radius: 50px;
+  line-height: 1;
+  background: #fff;
+}
+
+.btn_main {
+  @extend .flex_cc;
+  @extend .btn_max;
+  box-sizing: border-box;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #debfed -144.79%, #a869c6 100%);
+  box-shadow: 0px 4px 8px 0px #a869c645;
+}
+
+.btn_feeder {
+  @extend .flex_cc;
+  @extend .btn_max;
+  box-sizing: border-box;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #ede0bf -144.79%, #ffc93e 100%);
+  box-shadow: 0px 4px 8px 0px #ffc93e45;
+}
+
+.btn_main_mini {
+  @extend .flex_cc;
+  @extend .bg_main;
+  min-width: 78px;
+  height: 32px;
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 7px 9px;
+  color: #333;
+}
+
+.lh1 {
+  line-height: 1;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.fw500 {
+  font-weight: 500;
+}
+
+.ls2 {
+  letter-spacing: 2px;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.wh100 {
+  width: 100%;
+  height: 100%;
+}
+
+.vw100 {
+  width: 100vw;
+}
+
+.vh100 {
+  height: 100vh;
+}
+
+.vwh100 {
+  width: 100vw;
+  height: 100vh;
+}
+
+.pt20 {
+  padding-top: 20px;
+}
+
+.pt24 {
+  padding-top: 24px;
+}
+
+.pb16 {
+  padding-bottom: 16px;
+}
+
+@for $i from 20 through 28 {
+  @if $i % 2==0 {
+    .lh#{$i} {
+      height: #{$i}px;
+      line-height: #{$i}px;
+    }
+  }
+}
+
+@for $i from 2 through 30 {
+  @if $i % 2==0 {
+    .mt#{$i} {
+      margin-top: #{$i}px;
+    }
+    .mr#{$i} {
+      margin-right: #{$i}px;
+    }
+    .mb#{$i} {
+      margin-bottom: #{$i}px;
+    }
+  }
+}
+
+@for $i from 10 through 20 {
+  @if $i % 2==0 {
+    .fz#{$i} {
+      font-size: #{$i}px;
+    }
+  }
+}
+
+.xsafe {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.xsafe_16 {
+  padding-bottom: calc(constant(safe-area-inset-bottom) - 16px) !important;
+  padding-bottom: calc(env(safe-area-inset-bottom) - 16px) !important;
+}
+
+.c_f {
+  color: #fff;
+}
+
+.c_3 {
+  color: #333;
+}
+
+.c_6 {
+  color: #666;
+}
+
+.c_75 {
+  color: #757575;
+}
+
+.c_9 {
+  color: #999;
+}
+
+.c_c3 {
+  color: #c3c3c3;
+}
+
+.c_main {
+  color: $main-color;
+}
+
+.c_sec {
+  color: $sec-color;
+}
+
+.c_friendly {
+  color: $friendly-color;
+}
+
+.c_unfriendly {
+  color: $unfriendly-color;
+}
+
+.c_poisoning {
+  color: $poisoning-color;
+}
+
+.bg_main {
+  background-color: $main-color !important;
+}
+
+.bg_main_sec {
+  background-color: $main-sec-color !important;
+}
+
+.bg_sec {
+  background-color: $sec-color !important;
+}
+
+.bg_sec_none {
+  color: $sec-color;
+}
+
+.bg_header {
+  background: linear-gradient(180deg, #f9e3a7, #f5f7f7) !important;
+}
+
+.bg_header_noWork {
+  background: linear-gradient(180deg, #ebedef, #f5f7f7) !important;
+}
+
+.bg_grey {
+  background-color: $grey-color !important;
+}
+
+.border_sec {
+  border: 1px solid $sec-color;
+}
+
+.border_main_sec {
+  border: 1px solid $main-sec-color;
+}
+
+.card_linear_main {
+  background: linear-gradient(
+    180deg,
+    rgba($color: $main-color, $alpha: 0.3) -47.73%,
+    rgba($color: $main-color, $alpha: 0) 100%
+  );
+}
+
+@for $i from 8 through 32 {
+  @if $i % 2==0 {
+    .icon#{$i} {
+      width: #{$i}px;
+      height: #{$i}px;
+      display: block;
+    }
+  }
+}
+
+.avatar40 {
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 100%;
+}
+
+.orderCard-item-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  width: fit-content;
+  height: 12px;
+  padding: 0 3px;
+  box-sizing: border-box;
+  background: #ff0000;
+  font-size: 10px;
+  color: #fff;
+  position: absolute;
+  right: -4px;
+  top: -4px;
+}
+.f-comment {
+  font-size: 11px;
+  color: #757575;
+  padding: 0 16px;
+  margin-bottom: 50px;
+  .f-comment-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px 0 #2e2c300f;
+    margin-bottom: 10px;
+    .f-comment-title {
+      display: flex;
+      justify-content: space-between;
+      .f-comment-title-left {
+        display: flex;
+        align-items: center;
+        .f-comment-title-img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          margin-right: 10px;
+          overflow: hidden;
+          > Image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    .f-comment-content {
+      padding-top: 12px;
+      font-size: 14px;
+    }
+  }
+}
+.f-star {
+  display: flex;
+  justify-content: flex-end;
+  height: 20px;
+  margin-bottom: 10px;
+  > Image {
+    width: 14px;
+    height: 14px;
+  }
+}
