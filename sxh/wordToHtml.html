@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word转HTML</title>
+    <!-- 引入 mammoth.js 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/mammoth@1.4.8/mammoth.browser.min.js"></script>
+    <!-- 引入 FileSaver.js 库 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/FileSaver.js/2.0.5/FileSaver.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Word转HTML</h1>
+    <div id="dropZone" style="border: 2px dashed #ccc; padding: 20px; text-align: center; margin: 20px 0;">
+        拖放文件到这里 或
+        <input type="file" id="fileInput" accept=".docx">
+    </div>
+    <button id="convertButton">转换并下载</button>
+    <div id="output"></div>
+
+    <script>
+        // 添加拖放事件处理
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.style.backgroundColor = '#f0f0f0';
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.style.backgroundColor = '';
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.style.backgroundColor = '';
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+            }
+        });
+
+        document.getElementById('convertButton').addEventListener('click', function () {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const arrayBuffer = event.target.result;
+                    const styleMap = [
+                        "p => p:margin-top(0):margin-bottom(0):line-height(1.5)", // 保留段落的行高
+                        "h1 => h1:margin-top(0):margin-bottom(0):line-height(1.5)", // 保留标题的行高
+                        "h2 => h2:margin-top(0):margin-bottom(0):line-height(1.5)",
+                        "h3 => h3:margin-top(0):margin-bottom(0):line-height(1.5)",
+                        "h4 => h4:margin-top(0):margin-bottom(0):line-height(1.5)",
+                        "h5 => h5:margin-top(0):margin-bottom(0):line-height(1.5)",
+                        "h6 => h6:margin-top(0):margin-bottom(0):line-height(1.5)",
+                        "table => table:border-collapse(collapse):width(100%)",
+                        "td => td:padding(5px):border(1px solid #ddd)",
+                        "th => th:padding(5px):border(1px solid #ddd):background-color(#f5f5f5)",
+                        "ul => ul:list-style-type(disc):margin-left(20px)",
+                        "ol => ol:list-style-type(decimal):margin-left(20px)",
+                        "li => li:margin-bottom(5px)",
+                        "strong => strong:font-weight(bold)",
+                        "em => em:font-style(italic)",
+                        "u => u:text-decoration(underline)"
+                    ];
+                    mammoth.convertToHtml({ arrayBuffer: arrayBuffer, styleMap: styleMap })
+                        .then(function (result) {
+                            const htmlContent = result.value; // The generated HTML
+                            const fullHtmlContent = `
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converted Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ol {
+            padding-inline-start: 12px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        p, h1, h2, h3, h4, h5, h6 {
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+        ul, ol {
+            margin: 10px 0 10px 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    ${htmlContent}
+</body>
+</html>
+`;
+                            const blob = new Blob([fullHtmlContent], { type: 'text/html;charset=utf-8' });
+                            saveAs(blob, 'converted.html');
+                        })
+                        .catch(function (err) {
+                            console.error(err);
+                            alert('转换失败，请检查文件格式或重试。');
+                        });
+                };
+                reader.readAsArrayBuffer(file);
+            } else {
+                alert('请选择一个Word文件。');
+            }
+        });
+    </script>
+</body>
+
+</html>

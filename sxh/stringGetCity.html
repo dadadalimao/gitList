@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>提取省市区县</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-left: 4px solid #ccc;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>提取地址中的省、市、区/县</h1>
+  <p>输入地址并解析其中的省、市、区/县。</p>
+
+  <textarea id="inputAddress" rows="5" cols="50" placeholder="请输入地址"></textarea>
+  <br><br>
+  <button id="extractButton">提取省市区县</button>
+
+  <h2>提取结果</h2>
+  <pre id="output"></pre>
+
+  <script>
+    // 省、市、区/县的正则模式
+    const patterns = {
+      province: /([\u4e00-\u9fa5]{2,}(省|自治区|特别行政区))/,
+      city: /([\u4e00-\u9fa5]{2,}(市|自治州|地区|盟))/,
+      district: /([\u4e00-\u9fa5]{2,}(区|县|旗|市辖区|自治县|林区))/,
+    };
+
+    /**
+     * 提取地址中的省、市、区/县
+     * @param {string} address - 输入的地址字符串
+     * @returns {Object} - 包含提取的省、市、区县和详细地址
+     */
+    function extractAddress(address) {
+      let result = {
+        province: null,
+        city: null,
+        district: null,
+        detail: address, // 默认整个输入作为详细地址
+      };
+
+      // 提取省
+      const provinceMatch = address.match(patterns.province);
+      console.log("🚀 ~ extractAddress ~ provinceMatch:", provinceMatch)
+      if (provinceMatch) {
+        result.province = provinceMatch[1];
+        address = address.replace(provinceMatch[0], ''); // 去除匹配的省
+      }
+
+      // 提取市
+      const cityMatch = address.match(patterns.city);
+      console.log("🚀 ~ extractAddress ~ cityMatch:", cityMatch)
+      if (cityMatch) {
+        result.city = cityMatch[1];
+        address = address.replace(cityMatch[0], ''); // 去除匹配的市
+      }
+
+      // 提取区/县
+      const districtMatch = address.match(patterns.district);
+      console.log("🚀 ~ extractAddress ~ districtMatch:", districtMatch)
+      if (districtMatch) {
+        result.district = districtMatch[1];
+        address = address.replace(districtMatch[0], ''); // 去除匹配的区/县
+      }
+
+      // 剩下的部分作为详细地址
+      result.detail = address.trim();
+
+      // 处理特殊情况：重复信息
+      if (result.city && result.city.includes(result.province)) {
+        result.city = result.city.replace(result.province, '').trim();
+      }
+
+      return result;
+    }
+
+    // 按钮点击事件绑定
+    document.getElementById('extractButton').addEventListener('click', () => {
+      const inputAddress = document.getElementById('inputAddress').value.trim();
+      if (!inputAddress) {
+        document.getElementById('output').textContent = '请输入有效的地址！';
+        return;
+      }
+
+      const result = extractAddress(inputAddress);
+      document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+    });
+  </script>
+</body>
+
+</html>

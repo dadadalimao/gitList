@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG多倍图导出工具</title>
+  <style>
+    /* 合并后的样式 */
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      width: 100%;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #dropZone {
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      margin: 20px 0;
+      transition: all 0.3s;
+    }
+
+    #dropZone.dragover {
+      border-color: #2196F3;
+      background-color: #f5f9ff;
+    }
+
+    #preview {
+      max-width: 100%;
+      height: 200px;
+      margin: 20px 0;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .export-btns,
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1976D2;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>SVG多倍图导出工具</h1>
+
+    <!-- 文件拖放区域 -->
+    <div id="dropZone">
+      将SVG文件拖放到此处，或点击选择文件
+      <input type="file" id="fileInput" accept="image/svg+xml" hidden>
+    </div>
+    <img id="preview">
+
+    <!-- 导出按钮 -->
+    <div class="export-btns" id="exportBtns">
+      <button onclick="exportImage(1)">导出1x图</button>
+      <button onclick="exportImage(2)">导出2x图</button>
+      <button onclick="exportImage(3)">导出3x图</button>
+    </div>
+
+    <!-- SVG代码输入框 -->
+    <textarea id="svgInput" placeholder="请在此粘贴SVG代码"></textarea>
+
+    <!-- 操作按钮 -->
+    <div class="buttons">
+      <button onclick="previewSVG()">预览SVG</button>
+      <button onclick="exportPNG()">导出PNG</button>
+      <button onclick="exportSVG()">导出SVG</button>
+    </div>
+
+    <!-- 预览区域 -->
+    <div class="preview" id="previewSvgCode"></div>
+  </div>
+
+  <script>
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+    const preview = document.getElementById('preview');
+    const exportBtns = document.getElementById('exportBtns');
+    let originalSVG = null;
+
+    // 拖放处理
+    dropZone.addEventListener('click', () => fileInput.click());
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropZone.classList.add('dragover');
+    });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+    dropZone.addEventListener('drop', handleDrop);
+    fileInput.addEventListener('change', handleFileSelect);
+
+    async function handleDrop(e) {
+      e.preventDefault();
+      dropZone.classList.remove('dragover');
+      const file = e.dataTransfer.files[0];
+      if (file.type === 'image/svg+xml') {
+        await processSVG(file);
+      }
+    }
+
+    async function handleFileSelect(e) {
+      const file = e.target.files[0];
+      if (file && file.type === 'image/svg+xml') {
+        await processSVG(file);
+      }
+    }
+
+    async function processSVG(file) {
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        originalSVG = e.target.result;
+        preview.src = URL.createObjectURL(file);
+        exportBtns.style.display = 'flex';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function previewSVG() {
+      const svgCode = document.getElementById('svgInput').value;
+      if (!svgCode) {
+        alert('请输入SVG代码');
+        return;
+      }
+
+      // 将SVG代码转换为Blob对象并生成预览
+      const blob = new Blob([svgCode], { type: 'image/svg+xml' });
+      const url = URL.createObjectURL(blob);
+      preview.src = url;
+      originalSVG = url; // 更新originalSVG以便支持多倍图导出
+      exportBtns.style.display = 'flex'; // 显示导出按钮
+    }
+
+    function exportImage(scale) {
+      if (!originalSVG) return;
+
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // 根据缩放比例设置画布尺寸
+        canvas.width = img.width * scale;
+        canvas.height = img.height * scale;
+
+        // 绘制放大后的图像
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        // 创建下载链接
+        const link = document.createElement('a');
+        link.download = `export@${scale}x.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      };
+      img.src = originalSVG;
+    }
+
+    function exportPNG() {
+      const svgElement = document.querySelector('svg');
+      if (!svgElement) {
+        alert('请先预览SVG');
+        return;
+      }
+
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const svgData = new XMLSerializer().serializeToString(svgElement);
+      const img = new Image();
+
+      // 设置canvas尺寸与SVG相同
+      canvas.width = svgElement.width.baseVal.value;
+      canvas.height = svgElement.height.baseVal.value;
+
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0);
+        // 下载PNG
+        const link = document.createElement('a');
+        link.download = 'image.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      };
+
+      img.src = 'data:image/svg+xml;base64,' + btoa(svgData);
+    }
+
+    function exportSVG() {
+      const svgCode = document.getElementById('svgInput').value;
+      if (!svgCode) {
+        alert('请输入SVG代码');
+        return;
+      }
+
+      const blob = new Blob([svgCode], { type: 'image/svg+xml' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.download = 'image.svg';
+      link.href = url;
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+
+</html>
